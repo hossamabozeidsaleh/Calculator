@@ -7,10 +7,9 @@
     android:layout_height="match_parent"
     android:background="@color/base_color"
     android:padding="14dp"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
-
+    <!-- Horizontal guideline for layout separation -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -18,22 +17,24 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".55" />
 
-
+    <!-- Display text at the top -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text=""
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Buttons with responsive width and height -->
     <Button
         android:id="@+id/click_ac"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg"
         android:text="@string/ac"
@@ -41,12 +42,14 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline" />
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@id/click_rim"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_rim"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg"
         android:text="@string/delete"
@@ -54,13 +57,14 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_ac"
-
-        app:layout_constraintTop_toBottomOf="@id/guideline" />
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@id/click_div"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_div"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg2"
         android:text="/"
@@ -69,26 +73,28 @@
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_rim"
         app:layout_constraintTop_toBottomOf="@id/guideline"
-        />
+        app:layout_constraintEnd_toStartOf="@id/click_mul"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_mul"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg2"
         android:text="*"
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/click_div"
-        app:layout_constraintTop_toBottomOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
 
-
+    <!-- Number buttons with consistent layout -->
     <Button
         android:id="@+id/click_7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -98,11 +104,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/click_ac" />
+        app:layout_constraintTop_toBottomOf="@id/click_ac"
+        app:layout_constraintEnd_toStartOf="@id/click_8"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_8"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -112,13 +120,14 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_7"
-        app:layout_constraintTop_toBottomOf="@id/click_rim" />
+        app:layout_constraintTop_toBottomOf="@id/click_rim"
+        app:layout_constraintEnd_toStartOf="@id/click_9"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_9"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
         android:onClick="ondiget_click"
@@ -127,11 +136,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_8"
-        app:layout_constraintTop_toBottomOf="@id/click_div" />
+        app:layout_constraintTop_toBottomOf="@id/click_div"
+        app:layout_constraintEnd_toStartOf="@id/click_minus"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_minus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg2"
@@ -139,13 +150,16 @@
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/click_9"
-        app:layout_constraintTop_toBottomOf="@id/click_mul" />
+        app:layout_constraintTop_toBottomOf="@id/click_mul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Continue with similar adjustments for other buttons -->
 
     <Button
         android:id="@+id/click_4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -155,11 +169,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/click_7" />
+        app:layout_constraintTop_toBottomOf="@id/click_7"
+        app:layout_constraintEnd_toStartOf="@id/click_5"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -168,13 +184,14 @@
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-
         app:layout_constraintStart_toEndOf="@id/click_4"
-        app:layout_constraintTop_toBottomOf="@+id/click_8" />
+        app:layout_constraintTop_toBottomOf="@id/click_8"
+        app:layout_constraintEnd_toStartOf="@id/click_6"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -184,11 +201,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_5"
-        app:layout_constraintTop_toBottomOf="@+id/click_9" />
+        app:layout_constraintTop_toBottomOf="@id/click_9"
+        app:layout_constraintEnd_toStartOf="@id/click_plus"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_plus"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg2"
@@ -196,15 +215,14 @@
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/click_6"
-        app:layout_constraintTop_toBottomOf="@+id/click_minus"
-        app:layout_constraintBottom_toTopOf="@id/click_eq"/>
-
+        app:layout_constraintTop_toBottomOf="@id/click_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -214,11 +232,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/click_4" />
+        app:layout_constraintTop_toBottomOf="@id/click_4"
+        app:layout_constraintEnd_toStartOf="@id/click_2"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -228,11 +248,13 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_1"
-        app:layout_constraintTop_toBottomOf="@id/click_5" />
+        app:layout_constraintTop_toBottomOf="@id/click_5"
+        app:layout_constraintEnd_toStartOf="@id/click_3"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -242,23 +264,24 @@
         android:textSize="22sp"
         app:backgroundTint="@null"
         app:layout_constraintStart_toEndOf="@id/click_2"
-        app:layout_constraintTop_toBottomOf="@id/click_6" />
+        app:layout_constraintTop_toBottomOf="@id/click_6"
+        app:layout_constraintEnd_toStartOf="@id/click_eq"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_eq"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg2"
         android:text="="
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/click_3"
-        app:layout_constraintTop_toBottomOf="@id/click_plus" />
-
+        app:layout_constraintTop_toBottomOf="@id/click_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
         android:id="@+id/click_0"
@@ -271,13 +294,14 @@
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/click_2"
-        app:layout_constraintStart_toStartOf="@+id/click_1"
-        app:layout_constraintTop_toBottomOf="@id/click_1" />
+        app:layout_constraintStart_toStartOf="@id/click_1"
+        app:layout_constraintEnd_toEndOf="@id/click_2"
+        app:layout_constraintTop_toBottomOf="@id/click_1"
+        app:layout_constraintHorizontal_weight="2" />
 
     <Button
         android:id="@+id/click_dot"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/carv_disg3"
@@ -285,10 +309,9 @@
         android:textColor="#339DFF"
         android:textSize="22sp"
         app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/click_3"
-        app:layout_constraintStart_toStartOf="@+id/click_3"
+        app:layout_constraintStart_toStartOf="@id/click_3"
+        app:layout_constraintEnd_toEndOf="@id/click_3"
         app:layout_constraintTop_toBottomOf="@id/click_2"
         android:onClick="ondiget_click" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
