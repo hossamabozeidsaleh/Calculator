@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calclutor" parent="Theme.Material3.DayNight.NoActionBar">
+<item name="android:statusBarColor">@color/black</item>    </style>
+
+    <style name="Theme.Calclutor" parent="Base.Theme.Calclutor" />
+</resources>

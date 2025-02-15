@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">calclutor</string>
+    <string name="delete">Del</string>
+    <string name="ac">AC</string>
+</resources>
